@@ -1,0 +1,7 @@
+.head_main {
+  background-image: linear-gradient(
+    rgba(238, 130, 238, 0.719),
+    rgba(150, 71, 150, 0.637)
+  );
+  color: lightyellow;
+}
