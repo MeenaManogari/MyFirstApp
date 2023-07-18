@@ -2,6 +2,8 @@ import Clients from "../../components/Client";
 import AddClients from "../../components/AddClientModal";
 import Projects from "../../components/Projects";
 import AddProjects from "../AddProjectModal";
+import "./Home.css";
+
 const Home = () => {
   return (
     <>

@@ -1,0 +1,5 @@
+.add_datas {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

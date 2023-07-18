@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_CLIENT } from "../mutations/clientMutations";
 import { GET_CLIENTS } from "../queries/clientQueries";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import "./modal.css";
 
 const AddClients = () => {
   const [clientPopup, setClientPopup] = useState(false);
@@ -48,45 +50,47 @@ const AddClients = () => {
       </button>
 
       {clientPopup ? (
-        <div className="client_form">
-          <div className="client-header">
-            <h3>ADD CLIENT</h3>
-            <button className="close_btn" onClick={handleClickClose}>
-              close
-            </button>
-          </div>
+        <div className="form_bg">
+          <div className="client_form">
+            <div className="client-header">
+              <h3>ADD CLIENT</h3>
+              <button className="close_btn" onClick={handleClickClose}>
+                <AiOutlineCloseCircle />
+              </button>
+            </div>
 
-          <div className="client_entry">
-            <form onSubmit={onSubmit}>
-              <div className="client_fields">
-                <label>Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="client_fields">
-                <label>Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="client_fields">
-                <label>Phone</label>
-                <input
-                  type="text"
-                  id="phone"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </div>
-              <button type="submit">Add</button>
-            </form>
+            <div className="client_entry">
+              <form onSubmit={onSubmit}>
+                <div className="client_fields">
+                  <label>Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="client_fields">
+                  <label>Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="client_fields">
+                  <label>Phone</label>
+                  <input
+                    type="text"
+                    id="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+                </div>
+                <button type="submit">Add</button>
+              </form>
+            </div>
           </div>
         </div>
       ) : (

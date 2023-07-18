@@ -1,0 +1,29 @@
+.client_main table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.client_main table thead tr {
+  background-color: #df89d1d7;
+  color: #ffffff;
+  text-align: left;
+}
+.client_main th,
+.client_main td {
+  padding: 10px 5px;
+}
+.client_main tbody tr {
+  background-color: #e4d7e1;
+  border-bottom: 1px solid #dddddd;
+}
+.client_main tbody tr button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.client_main {
+  padding: 32px;
+}

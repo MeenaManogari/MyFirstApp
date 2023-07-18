@@ -1,0 +1,21 @@
+.project_details {
+  display: flex;
+  gap: 30px;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+.project_details a {
+  text-decoration: none;
+  color: white;
+
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  background-color: rgb(206, 146, 198);
+}
+.row {
+  display: flex;
+  gap: 50px;
+  padding: 32px;
+  flex-wrap: wrap;
+}

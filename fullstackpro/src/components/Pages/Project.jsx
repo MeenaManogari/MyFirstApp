@@ -2,6 +2,10 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_PROJECT } from "../../queries/projectQueries";
 import ClientInfo from "../ClientInfo";
+import DeleteProject from "../DeleteProject";
+import EditProject from "../EditProjectForm";
+import { FaBackward } from "react-icons/fa";
+import "./Project.css";
 
 const Project = () => {
   const { id } = useParams();
@@ -14,16 +18,27 @@ const Project = () => {
   return (
     <>
       {!loading && !error && (
-        <div className="Single_Project">
-          <Link to="/">back</Link>
+        <div className="project_page">
+          <div className="Single_Project">
+            <div className="project_title">
+              <h3>{data.project.name}</h3>
+              <Link to="/">
+                <FaBackward />
+              </Link>
+            </div>
+            <div className="project_info">
+              <p>{data.project.description}</p>
 
-          <h1>{data.project.name}</h1>
-          <p>{data.project.description}</p>
+              <h5>Project Status:</h5>
+              <p>{data.project.status}</p>
+            </div>
 
-          <h5>Project Status</h5>
-          <p>{data.project.status}</p>
+            <ClientInfo client={data.project.client} />
 
-          <ClientInfo client={data.project.client} />
+            <EditProject project={data.project} />
+
+            <DeleteProject projectId={data.project.id} />
+          </div>
         </div>
       )}
     </>
